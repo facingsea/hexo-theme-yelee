@@ -99,52 +99,133 @@ $line-numbers
 
 @require "customise/inline-code.styl"
 
-pre
+
+custom_style = hexo-config("highlight_style.custom_style")
+custom_code_block = hexo-config("highlight_style.custom_code_block")
+
+if !custom_style
+
+  pre
+    .comment
+    .quote
+      color: highlight-comment
+    .variable
+    .attribute
+    .tag
+    .regexp
+    .ruby .constant
+    .xml .tag .title
+    .xml .pi
+    .xml .doctype
+    .html .doctype
+    .css .id
+    .css .class
+    .css .pseudo
+      color: highlight-red
+    .number
+    .preprocessor
+    .built_in
+    .literal
+    .params
+    .constant
+      color: highlight-orange
+    .class
+    .ruby .class .title
+    .css .rules .attribute
+      color: highlight-green
+    .keyword
+    .string
+    .value
+    .inheritance
+    .header
+    .ruby .symbol
+    .xml .cdata
+      color: highlight-green
+    .css .hexcolor
+      color: highlight-aqua
+    .title
+    .function
+    .python .decorator
+    .python .title
+    .ruby .function .title
+    .ruby .title .keyword
+    .perl .sub
+    .javascript .title
+    .coffeescript .title
+      color: highlight-blue
+
+    .javascript .function
+      color: highlight-purple
+
+if custom_style
   .comment
-  .title
-    color: highlight-comment
-  .variable
-  .attribute
-  .tag
-  .regexp
-  .ruby .constant
-  .xml .tag .title
-  .xml .pi
+  .quote
   .xml .doctype
   .html .doctype
-  .css .id
-  .css .class
-  .css .pseudo
-    color: highlight-red
-  .number
-  .preprocessor
-  .built_in
-  .literal
-  .params
-  .constant
-    color: highlight-orange
-  .class
-  .ruby .class .title
-  .css .rules .attribute
+  .inheritance
+    color: highlight-comment
+  .keyword
+  .ruby .title .keyword
+  .function
+  .javascript .function
+  .python .decorator
+  .tag
+  .addition
+  .header
     color: highlight-green
+  .number
   .string
   .value
-  .inheritance
-  .header
-  .ruby .symbol
-  .xml .cdata
-    color: highlight-green
-  .css .hexcolor
-    color: highlight-aqua
-  .function
-  .python .decorator
-  .python .title
-  .ruby .function .title
-  .ruby .title .keyword
+  .meta .string
+  .literal
+  .regexp
   .perl .sub
+    color: highlight-cyan
+  .title
   .javascript .title
   .coffeescript .title
+  .ruby .class .title
+  .xml .tag .title
+  .python .title
+  .ruby .function .title
+  .xml .pi
+  .xml .cdata
+  .section
+  .name
+  .id
+  .css .id
+  .css .class
+  .css .hexcolor
+  .class
     color: highlight-blue
-  .keyword
-  .javascript .function
-    color: highlight-purple
+  .attribute
+  .css .rules .attribute
+  .attr
+  .variable
+  .class .title
+  .type
+  .constant
+  .ruby .constant
+  .params
+    color: highlight-yellow
+  .symbol
+  .ruby .symbol
+  .bullet
+  .subst
+  .meta
+  .meta .keyword
+  .pseudo
+  .css .pseudo
+  .link
+    color: highlight-orange
+  .built_in
+  .deletion
+  .preprocessor
+    color: highlight-red
+  .formula
+    background: #073642
+  .emphasis
+    font-style: italic
+  .strong
+    font-weight: bold
+

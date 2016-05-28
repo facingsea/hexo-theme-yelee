@@ -16,8 +16,10 @@
 
 highlight_style = hexo-config("highlight_style.on")
 code_block = hexo-config("highlight_style.code_block")
+custom_style = hexo-config("highlight_style.custom_style")
+custom_code_block = hexo-config("highlight_style.custom_code_block")
 
-if highlight_style
+if highlight_style && !custom_style
 
     // Tomorrow Night Eighties
     if code_block
@@ -78,3 +80,41 @@ if highlight_style
         highlight-aqua         = #70c0b1
         highlight-blue         = #7aa6da
         highlight-purple       = #c397d8
+
+// custom style
+if highlight_style && custom_style
+
+    // Solarized Dark
+    if custom_code_block == "0"
+        highlight-background   = rgba(0, 43, 54, 1)
+        highlight-current-line = #2a2a2a
+        highlight-selection    = #338fff
+        highlight-foreground   = #839496
+        highlight-comment      = #586e75
+        highlight-red          = #dc322f
+        highlight-orange       = #cb4b16
+        highlight-yellow       = #b58900
+        highlight-green        = #859900
+        highlight-cyan         = #2aa198
+        highlight-aqua         = #70c0b1
+        highlight-blue         = #268bd2
+        highlight-purple       = #c397d8
+        highlight-formula      = #073642
+
+    // Solarized Light
+    if custom_code_block == "1"
+        highlight-background   = rgba(253, 246, 227, 1)
+        highlight-current-line = #2a2a2a
+        highlight-selection    = #338fff
+        highlight-foreground   = #657b83
+        highlight-comment      = #93a1a1
+        highlight-red          = #dc322f
+        highlight-orange       = #cb4b16
+        highlight-yellow       = #b58900
+        highlight-green        = #859900
+        highlight-cyan         = #2aa198
+        highlight-aqua         = #70c0b1
+        highlight-blue         = #268bd2
+        highlight-purple       = #c397d8
+        highlight-formula      = #073642
+
