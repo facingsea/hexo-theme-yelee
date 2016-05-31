@@ -1,0 +1,38 @@
+<script language="javascript">
+    window.onload = function() {
+        $("[title]").each(function() {
+            layerTip(this);
+        });
+        $("#scroll").each(function() {
+            layerTip(this);
+        });
+        $("#tocButton, #comments").each(function() {
+            layerTip(this);
+        });
+        $("#post-nav-button").each(function() {
+            layerTip(this);
+        });
+        $(".social").each(function() {
+            layerTip(this);
+        });
+
+        function layerTip(ele){
+            var $ele = $(ele);
+            var title = $ele.attr('title');
+            if (title == undefined || title == "") return;
+            var layerIndex = -1;
+            $ele.data('title', title).removeAttr('title').hover(
+                function() {
+                    $ele.attr('title', '');
+                    layerIndex = layer.tips($ele.data('title'), ele, {
+                        tips: 3
+                    });
+                }, function() {
+                    $ele.attr('title', title);
+                    if(layerIndex != -1){
+                        layer.close(layerIndex);
+                    }
+                });
+        }
+    };
+</script>

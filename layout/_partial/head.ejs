@@ -81,6 +81,15 @@
       </script>
   <% } %>
 
+  <% if (theme.layer_tip) { %>
+
+        <link href="<%- theme.CDN.layer_css %>" rel="stylesheet">
+        <script src="<%- theme.CDN.layer_js %>"></script>
+        <!--
+        yiliaConfig.layer_tip = [true, "<%- theme.CDN.layer_js %>", "<%- theme.CDN.layer_css %>"];
+        -->
+  <% } %>
+
   <% if (theme.root_url){ %>
       <script>
           yiliaConfig.rootUrl = <%=theme.root_url%>;
