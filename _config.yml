@@ -23,6 +23,7 @@ favicon: /favicon.png
 ## Change Language in SITE's _config.yml | 在站点配置中切换语言
 ## https://hexo.io/docs/internationalization.html
 ## Available Languages: en, zh-Hans, zh-Hant-TW, zh-Hant-HK
+language: zh-Hans
 
 # Subdirectory | 子目录
 ## If your site' url is 'http://yoursite.com/blog', set root_url as '/blog/'
@@ -110,7 +111,7 @@ base_font_size: 16  #px, 16 - 24
 
 ## General Color Scheme | 主题配色方案 
 ## 可用值 Value: yilia
-color_scheme: 
+color_scheme: light
 
 highlight_style:
   on: true
@@ -139,7 +140,7 @@ blockquote_style:
 heading_style: 0 # Value: 0 - 2
 
 ## List style type (ul) | 无序列表项标记样式
-list_style: 4  # value: 0 - 12 可选
+list_style: 0  # value: 0 - 12 可选
 
 # 左边栏宽度 px
 left_col_width: 300
