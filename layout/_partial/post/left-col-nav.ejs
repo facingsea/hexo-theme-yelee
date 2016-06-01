@@ -1,0 +1,38 @@
+<% if (is_post()){ %>
+<div class="left-col-nav" id="left-col-nav">
+    <a href="javascript:void(0);" title="隐藏左侧">
+        <i class="fa fa-angle-double-left"></i>
+    </a>
+</div>
+<script>
+    $("#left-col-nav > a > i").click(function() {
+        var cls = $(this).attr("class");
+        if(cls.indexOf("fa-angle-double-left") > -1){
+            $(this).removeClass("fa-angle-double-left");
+            $(this).addClass("fa-angle-double-right");
+            $(this).parent().attr("title", "显示左侧");
+            $(this).parent().data("title", "显示左侧"); // 更新缓存
+
+            // 隐藏左侧
+            $(".left-col").hide(); // 左侧隐藏
+            $(".mid-col").css("left", "0px"); // 改变主题宽度
+            $("#post-nav-button").css("left", "0px"); // 改变切换文章栏位置
+            $("#left-col-nav").css("left", "0px"); // 隐藏显示图标位置
+            //显示目录图标
+            $(".nav-table-content").show();
+        }else{
+            $(this).removeClass("fa-angle-double-right");
+            $(this).addClass("fa-angle-double-left");
+            $(this).parent().attr("title", "隐藏左侧");
+            $(this).parent().data("title", "隐藏左侧"); // 更新缓存
+            // 显示左侧
+            $(".left-col").show();
+            $(".mid-col").css("left", "300px");
+            $("#post-nav-button").css("left", "300px"); // 改变切换文章栏位置
+            $("#left-col-nav").css("left", "300px"); // 隐藏显示图标位置
+            //隐藏目录图标
+            $(".nav-table-content").hide();
+        }
+    })
+</script>
+<% } %>
