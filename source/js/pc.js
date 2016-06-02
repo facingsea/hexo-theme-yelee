@@ -106,6 +106,12 @@ define([], function(){
                     $(".switch-btn, .switch-area").fadeToggle(300);
                 }
             });
+            //目录
+            $("#post-nav-button > a:nth-child(2)").click(function() {
+                $("#post-nav-button .fa-list-ol,#post-nav-button .fa-times").toggle();
+                //$(".post-list").toggle(300);
+                console.log("show table content.");
+            });
         }
     }()
 
