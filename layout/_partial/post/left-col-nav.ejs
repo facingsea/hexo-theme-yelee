@@ -20,6 +20,11 @@
             $("#left-col-nav").css("left", "0px"); // 隐藏显示图标位置
             //显示目录图标
             $(".nav-table-content").show();
+            //隐藏目录默认结构
+            if($("#tocButton").css("display") != "none") {
+                $("#toc").css("display", "none");
+                $("#tocButton").css("display", "none");
+            }
         }else{
             $(this).removeClass("fa-angle-double-right");
             $(this).addClass("fa-angle-double-left");
@@ -32,6 +37,28 @@
             $("#left-col-nav").css("left", "300px"); // 隐藏显示图标位置
             //隐藏目录图标
             $(".nav-table-content").hide();
+
+            // if the toc is showing, change the icon.
+            if($("#toc").is(":visible")){
+                $("#toc").removeClass("common-bg");
+                $("#toc").removeClass("margin-left-30");
+                $(".nav-table-content .fa-list-ol,.nav-table-content .fa-times").toggle();
+            }
+
+            // if the post list is showing, change the icon.
+            if($(".post-list").is(":visible")){
+                $(".post-list").removeClass("common-bg");
+                $(".post-list").removeClass("margin-left-30");
+//                $(".post-list").toggle();
+//                $(".nav-table-content").next().children().each(function(index, dom){
+//                    $(dom).toggle();
+//                });
+            } else {
+                //显示目录默认结构
+                $("#tocButton").css("display", "");
+                $("#tocButton").click();
+            }
+
         }
     })
 </script>
