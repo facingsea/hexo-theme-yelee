@@ -1,5 +1,5 @@
 # Theme Version | 当前版本
-Yelee: "3.0"
+Yelee: "3.5"
 
 # >>> Basic Setup | 基础设置 <<<
 
@@ -29,7 +29,7 @@ language: zh-Hans
 ## If your site' url is 'http://yoursite.com/blog', set root_url as '/blog/'
 ## 网站若存放在子目录，请按上面格式填写
 ## https://hexo.io/docs/configuration.html#URL
-root_url:
+root_url: 
 
 # Year of Site Creation | 网站成立年份
 since: 2016
@@ -51,8 +51,13 @@ subnav:
   #SegmentFault: ""
   #博客园: "cnblogs"
   #CSDN: ""
+  #Coding: ""
   #网易云音乐: "netease"
   #虾米音乐: "xiami"
+  #bilibili: ""
+  #AcFun: ""
+  #niconico: ""
+  #Quora: ""
   Facebook: "https://www.facebook.com/wangzhf"
   #Google: "#"
   Twitter: "https://twitter.com/facingseas"
@@ -65,6 +70,7 @@ subnav:
   #CodePen: ""
   #Plunker: ""
   #Instagram: "#"
+  #LOFTER: ""
   #Flickr: "#"
   #reddit: ""
   #Medium: ""
@@ -79,6 +85,10 @@ subnav:
 preload_comment: true
 ## false: 当点击评论条等区域时再加载评论模块
 ## false: load comment's section until u click/hover on the bar/icon
+
+show_count: false
+## 是否在主页文章标题旁显示评论数（多说、Disqus）
+## Add comment count after article title
 
 disqus:
   #on: true
@@ -108,7 +118,7 @@ youyan:
 ## "5": show images form bg-1.jpg to bg-5.jpg in `/yelee/source/background/`
 ## "5": 显示`/yelee/source/background/`文件夹中 bg-1.jpg 到 bg-5.jpg 这5张图片
 ## "0": white-gray background | 淳朴灰白背景
-background_image: 0
+background_image: 5
 
 # Base Font Size | 字号调节
 base_font_size: 16  #px, 16 - 24
@@ -186,9 +196,21 @@ friends:
 aboutme: 面朝大海，春暖花开
 #aboutme: false
 
-# 是否在新窗口打开链接
-# Open ALL link in a new tab
-open_in_new: false
+# Open link in a new tab | 是否在新窗口打开链接
+## `global` 0: Set separately, 1: Open all in new 2: Open all in current
+## `global` 0: 分开设置, 1: 全部在新标签打开, 2: 全部在"当前"标签打开
+open_in_new:
+  global: 0 # 0-2
+  title: false # article title in homepage 主页文章标题
+  post: false # link within post/page 正文中的链接
+  tags: false # 标签
+  categories: false # 分类
+  article_nav: false # 导航
+  archives: true # 归档
+  mini_archives: true # 迷你归档
+  menu: false # 边栏菜单
+  friends: true  # 友情链接
+  socail: true # 社交图标
 
 # Customize feed link 自定义订阅地址
 rss: /atom.xml
@@ -208,7 +230,7 @@ ie_updater:
 ## Insatall below plugin to take effect | 使用搜索需先安装对应插件
 ## https://github.com/PaicHyperionDev/hexo-generator-search
 ## npm install hexo-generator-search --save
-search: 
+search:
   on: true
   onload: false
   ## true: get search.xml file when the page has loaded

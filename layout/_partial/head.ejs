@@ -22,7 +22,7 @@
 <link rel="apple-touch-icon" href= "<%- theme.root_url %>/apple-touch-icon.png">
 
 <% if (theme.rss){ %>
-    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+    <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
 <% } %>
 
 <% if (theme.favicon){ %>
@@ -77,7 +77,6 @@ if ( is_archive() ) {
         isArchive: <%=is_archive()%>,
         isTag: <%=is_tag()%>,
         isCategory: <%=is_category()%>,
-        open_in_new: <%=theme.open_in_new%>,
         fancybox_js: "<%- theme.CDN.fancybox_js %>",
         scrollreveal: "<%- theme.CDN.scrollreveal %>",
         search: <%= theme.search.on %>
