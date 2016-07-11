@@ -18,6 +18,9 @@
             $(".mid-col").css("left", "0px"); // 改变主题宽度
             $("#post-nav-button").css("left", "0px"); // 改变切换文章栏位置
             $("#left-col-nav").css("left", "0px"); // 隐藏显示图标位置
+            // 设置默认zindex值
+            $("#toc").css("z-index", "10");
+            $(".post-list").css("z-index", "10");
             //显示目录图标
             $(".nav-table-content").show();
             //隐藏目录默认结构
@@ -59,6 +62,9 @@
                 $("#tocButton").click();
             }
 
+            // 设置默认zindex值
+            $("#toc").css("z-index", "");
+            $(".post-list").css("z-index", "");
         }
     })
 </script>
